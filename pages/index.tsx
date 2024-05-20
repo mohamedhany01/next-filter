@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect, useCallback } from 'react';
 import Head from 'next/head';
 import FilterPanel from '../components/Home/FilterPanel/FilterPanel';
@@ -9,6 +11,9 @@ import SearchAppBar from '../components/Home/SearchBar/SearchAppBar';
 import { Box, Container, Grid } from '@mui/material';
 
 async function fetchDataFromAPI() {
+  // console.log(process.env);
+  console.log(process.env.NEXT_PUBLIC_JSON_API_URL);
+
   const res = await fetch(`${process.env.NEXT_PUBLIC_JSON_API_URL}`);
   return res.json();
 }
