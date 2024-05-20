@@ -9,6 +9,9 @@ import SearchAppBar from '../components/Home/SearchBar/SearchAppBar';
 import { Box, Container, Grid } from '@mui/material';
 
 async function fetchDataFromAPI() {
+  console.log(process.env);
+  console.log(process.env.JSON_API_URL);
+
   const res = await fetch(`${process.env.JSON_API_URL}`);
   return res.json();
 }
